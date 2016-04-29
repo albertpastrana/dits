@@ -1,0 +1,9 @@
+[package]
+name = "dits"
+version = "0.1.0"
+authors = ["Albert Pastrana <albert.pastrana@gmail.com>"]
+
+[dependencies]
+clap = "2.3.0"
+git2 = "0.4.2"
+handlebars = "0.16.0"
