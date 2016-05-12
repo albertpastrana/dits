@@ -6,4 +6,5 @@ authors = ["Albert Pastrana <albert.pastrana@gmail.com>"]
 [dependencies]
 clap = "2.3.0"
 git2 = "0.4.2"
-handlebars = "0.16.0"
+log = "0.3.6"
+env_logger = "0.3.3"
