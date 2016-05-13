@@ -1,4 +1,4 @@
-# Dits
+# Dits [![Build Status](https://travis-ci.org/albertpastrana/dits.svg?branch=master)](https://travis-ci.org/albertpastrana/dits)
 
 Dits (pronounced as deets) is a free and open source Distributed Issue Tracking System designed to handle projects in an easy, flexible and extensible way.
 
