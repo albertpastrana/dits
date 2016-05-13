@@ -5,7 +5,7 @@ use std::path::Path;
 use git2::Repository;
 
 pub fn normalise_str(s: &str) -> String {
-	s.replace(" ", "-")
+    s.replace(" ", "-")
 }
 
 pub fn workdir<'a>(repo: &'a Repository) -> Result<&'a Path, CliError> {

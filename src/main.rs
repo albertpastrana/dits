@@ -36,18 +36,18 @@ fn main() {
 
     let options = options();
 
-	let result = match options.subcommand_name() {
+    let result = match options.subcommand_name() {
         Some("create") => ticket_from_args(options.subcommand_matches("create").unwrap()).create(&repo, &workdir, &abs_tickets_dir.as_path()),
-        Some("work") => {
+        Some("checkout") => {
             //clap + the pattern matchin ensure that we will have the work command and the mandatory name argument
-            let name = normalise_str(options.subcommand_matches("work").unwrap().value_of("name").unwrap());
+            let name = normalise_str(options.subcommand_matches("checkout").unwrap().value_of("name").unwrap());
             Ticket::find_one(&workdir, &abs_tickets_dir.as_path(), &name).and_then(|t| t.checkout(&repo))
         },
-		_ => Err(CliError::NoCommandDefined),
-	};
+        _ => Err(CliError::NoCommandDefined),
+    };
 
-	match result {
-		Ok(m) => println!("{}", m),
+    match result {
+        Ok(m) => println!("{}", m),
         Err(CliError::Io(err)) => error!("{:?}", err),
         Err(CliError::TicketExists(tickets)) => error!("A ticket with that name already exists in this repo:\n{:?}\n", tickets),
         Err(CliError::NoCommandDefined) => error!("Need to provide at least one command. Type --help for help.\n"),
@@ -57,7 +57,7 @@ fn main() {
         Err(CliError::PathError(msg)) => error!("Error with path: {}", msg),
         Err(CliError::CantFindTicket) => error!("Can't find ticket"),
         Err(CliError::MoreThanOneTicket(tickets)) => error!("Ambiguous search, more than one ticket found: {:?}", tickets),
-	}
+    }
 }
 
 fn options<'a>() -> ArgMatches<'a> {

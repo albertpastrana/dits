@@ -8,7 +8,7 @@ So that the rest of the team know what I'm doing
 
 ## Acceptance criteria
 
-There is a new subcommand (`work`) that accepts the following arguments:
+There is a new subcommand (`checkout`) that accepts the following arguments:
 
 - `name`: name of the ticket the user wants to start working with. It has to be case insensitive and the user should be able to provide just a portion of the name (as a regular expression, like in `find`)
 

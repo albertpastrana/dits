@@ -197,6 +197,14 @@ Just because we wanted to learn both. Building this project seemed like a good o
 
 - Jira/Trello/Github issues import
 
+## Alternatives
+
+There are some similar projects you can check:
+
+- [https://github.com/jwiegley/git-issues]()
+- [https://github.com/jeffWelling/ticgit]()
+- [https://github.com/schacon/ticgit]()
+
 ## Contributing
 
 ## License
