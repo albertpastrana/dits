@@ -1,6 +1,6 @@
 # Dits [![Build Status](https://travis-ci.org/albertpastrana/dits.svg?branch=master)](https://travis-ci.org/albertpastrana/dits)
 
-Dits (pronounced as deets) is a free and open source Distributed Issue Tracking System designed to handle projects in an easy, flexible and extensible way.
+Dits is a free and open source Distributed Issue Tracking System designed to handle projects in an easy, flexible and extensible way.
 
 Dits can be used for any kind of projects, from small with just a team to bigger projects, with multiple remote teams and complex workflows.
 
@@ -8,10 +8,11 @@ Dits can be used for any kind of projects, from small with just a team to bigger
 
 There are lots of issue tracking systems out there, most of them are heavily used, have a long history, are stable, provide a huge amount of features and configuration options... Why then create another one?
 
-Although the above is true and we've been reasonably satisfied using several of those systems, we were mainly frustated by two limitations we found on those systems:
+Although the above is true and we've been reasonably satisfied using several of those systems, we were mainly frustated by three limitations we found on those systems:
 
 - Most of them are centralized (SPOF)
 - The source code and the issues reside in different places
+- The issues and its associated metadata are stored in some (sometimes propietary) format that is not plain text
 
 Dits main design principle was to use the same git repository[^1] that stores the source code of the project to store the issues related to it.
 
@@ -22,6 +23,7 @@ When we were thinking about what characteristics Dits should have we wrote the f
 - Technical users should be able to use it without context switching. They shouldn't need to install or use any new tool they are not already using for doing their job (editor, command line...)
 - Non technical users should be able to use it easily, preferably via a web interface with minimum setup
 - Markdown should be used to write the specs, as it provides a text-based, non-propietary, human-readable format that is easy of use for both technical and non-technical users
+- All data related to an issue should be viewable and editable without needing a separate application (not even dits!)
 - Commits in the code should be easy to relate to a ticket
 - The system shouldn't be opinionated, so everybody can use it and adapt to their own workflow
 - The system should not need any configuration and minimal-to-none maintenance
@@ -175,10 +177,6 @@ The following configuration options are allowed:
 - `default_issue_type`:
 - `default_issue_container`:
 
-## Githooks
-
-We provide some githooks that will make sure the issues have a valid format (a valid issue type, proper markdown...).
-
 ## How do we synchronize the work?
 
 Remember we commented that this software is non-opinionated and distributed like git? Then, you have the answer. You can synchronize the work however you want, it's your decision.
@@ -195,7 +193,13 @@ Just because we wanted to learn both. Building this project seemed like a good o
 
 ## Future
 
-- Jira/Trello/Github issues import
+### Issues import
+
+From most used issue tracking systems: Jira, Trello, Github...
+
+### Githooks
+
+We will provide some githooks that will make sure the issues have a valid format (a valid issue type, proper markdown...).
 
 ## Alternatives
 
